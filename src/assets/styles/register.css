@@ -1,0 +1,280 @@
+
+/* REGISTER PAGE */
+.register-page {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 45px 20px;
+  overflow: hidden;
+  background: var(--color-background);
+}
+
+/* DECORATIVE BACKGROUND */
+.register-decoration {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  top: -420px;
+  left: -180px;
+  border: 35px solid rgba(168, 180, 154, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* REGISTER CARD */
+.register-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(229, 220, 203, 0.8);
+  border-radius: 28px;
+  box-shadow: 0 18px 45px rgba(55, 58, 50, 0.12);
+}
+
+
+/* FOOD IMAGE */
+.register-food-image {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+}
+
+.register-food-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+/* Smooth image-to-card blending */
+.register-food-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(247, 244, 237, 0) 45%,
+    rgba(255, 255, 255, 0.35) 75%,
+    #ffffff 100%
+  );
+  pointer-events: none;
+}
+/* FORM CONTENT */
+.register-content {
+  position: relative;
+  padding: 15px 30px 28px;
+  background: #ffffff;
+}
+
+.register-content h1 {
+  margin: 0 0 6px;
+  color: var(--color-text);
+  font-family: Georgia, serif;
+  font-size: 30px;
+}
+
+.register-subtitle {
+  margin-bottom: 20px;
+  color: #888;
+  font-size: 13px;
+}
+
+/* INPUT FIELDS */
+.register-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.register-input {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 15px;
+  background: var(--color-background);
+  border: 1px solid var(--color-secondary-bg);
+  border-radius: 30px;
+  transition: 0.2s ease;
+}
+
+.register-input:focus-within {
+  background: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(113, 131, 106, 0.12);
+}
+
+.register-input span {
+  color: var(--color-primary);
+  font-size: 14px;
+}
+
+.register-input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 12px;
+}
+
+.register-input input::placeholder {
+  color: #999;
+}
+
+/* TERMS AND CONDITIONS */
+.register-terms {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 3px 0;
+  color: #777;
+  font-size: 11px;
+}
+
+.register-terms input {
+  accent-color: var(--color-primary);
+}
+
+/* REGISTER BUTTON */
+.register-submit {
+  width: 100%;
+  height: 47px;
+  border: none;
+  border-radius: 30px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.register-submit:hover {
+  background: var(--color-background);
+  transform: translateY(-2px);
+  color: var(--color-primary);
+}
+
+/* DIVIDER */
+.register-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 14px;
+  color: #999;
+  font-size: 11px;
+}
+
+.register-divider::before,
+.register-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-secondary-bg);
+}
+
+/* SOCIAL BUTTONS */
+.register-social {
+  display: flex;
+  gap: 12px;
+}
+
+.social-button {
+  flex: 1;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid var(--color-secondary-bg);
+  border-radius: 30px;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+
+}
+
+.social-button:hover {
+  background: var(--color-secondary-bg);
+}
+
+
+/* LOGIN LINK */
+.login-prompt {
+  margin: 22px 0 0;
+  text-align: center;
+  color: #777;
+  font-size: 11px;
+}
+
+.login-prompt a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-prompt a:hover {
+  color: var(--color-terracotta);
+  text-decoration: underline;
+}
+
+/* VALIDATION MESSAGES */
+.form-message {
+  font-size: 12px;
+}
+
+.form-message.error {
+  color: #c0392b;
+}
+
+.form-message.success {
+  color: #27834a;
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+  .register-page {
+    padding: 30px 18px;
+  }
+
+  .register-card {
+    max-width: 360px;
+    border-radius: 25px;
+  }
+
+  .register-content {
+    padding: 22px;
+  }
+
+  .register-food-image {
+    height: 150px;
+  }
+}
+@media (max-width: 500px) {
+  .register-page {
+    padding: 30px 18px;
+  }
+
+  .register-card {
+    max-width: 360px;
+    border-radius: 25px;
+  }
+
+  .register-content {
+    padding: 15px 22px 22px;
+  }
+
+  .register-food-image {
+    height: 160px;
+  }
+}

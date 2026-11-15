@@ -1,0 +1,362 @@
+
+/* =================================
+   TASTEIT - ADD RECIPE PAGE
+================================= */
+
+.add-recipe-page {
+  max-width: 1000px;
+  margin: 55px auto;
+  padding: 40px;
+  background: var(--color-white);
+  border: 1px solid #e9e5dc;
+  border-radius: 22px;
+  box-shadow: 0 8px 30px rgba(55, 58, 50, 0.05);
+  box-sizing: border-box;
+}
+
+/* =================================
+   GUEST PAGE
+================================= */
+
+/* Remove the old white card around the guest design */
+.add-recipe-page:has(.guest-add-page) {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.guest-add-page {
+  max-width: 1150px;
+  margin: 55px auto;
+  padding: 20px;
+  color: var(--color-text);
+}
+
+.guest-hero {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 65px;
+  padding: 55px;
+  background: var(--color-secondary-bg);
+  border-radius: 25px;
+}
+
+.guest-content {
+  max-width: 500px;
+}
+
+.guest-eyebrow {
+  display: inline-block;
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  margin-bottom: 12px;
+}
+
+.add-recipe-page .guest-content h1 {
+  color: var(--color-text);
+  font-family: Georgia, serif;
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.12;
+  font-weight: 500;
+  margin: 12px 0 22px;
+}
+
+.guest-content h1 span {
+  display: block;
+  color: var(--color-primary);
+  font-style: italic;
+}
+
+.guest-description {
+  max-width: 440px;
+  color: #65665e;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.guest-benefits {
+  display: grid;
+  gap: 14px;
+  margin: 28px 0;
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.guest-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.guest-signup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 28px;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.guest-signup:hover {
+  background: var(--color-text);
+  transform: translateY(-3px);
+}
+
+.guest-login {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.guest-login:hover {
+  text-decoration: underline;
+}
+
+/* Guest food image */
+
+.guest-image {
+  position: relative;
+  width: 100%;
+}
+
+.guest-image img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(55, 58, 50, 0.12);
+}
+
+.image-caption {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  display: grid;
+  gap: 7px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 10px;
+}
+
+.image-caption span {
+  color: var(--color-terracotta);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.image-caption strong {
+  color: var(--color-text);
+  font-family: Georgia, serif;
+  font-size: 18px;
+}
+
+/* Guest feature section */
+
+.guest-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  padding: 45px 10px;
+}
+
+.guest-feature {
+  padding: 25px;
+  background: var(--color-white);
+  border: 1px solid #e9e5dc;
+  border-radius: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.guest-feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(55, 58, 50, 0.07);
+}
+
+.guest-feature span {
+  color: var(--color-terracotta);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.guest-feature h3 {
+  color: var(--color-text);
+  font-family: Georgia, serif;
+  font-size: 23px;
+  margin: 12px 0;
+}
+
+.guest-feature p {
+  color: #77786f;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =================================
+   LOGGED-IN RECIPE FORM
+================================= */
+
+.add-recipe-page:not(:has(.guest-add-page)) h1 {
+  color: var(--color-text);
+  font-family: Georgia, serif;
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.add-recipe-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-recipe-page form label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 8px;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.add-recipe-page input,
+.add-recipe-page textarea,
+.add-recipe-page select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 15px;
+  border: 1px solid #e5dfd3;
+  border-radius: 9px;
+  background: #faf8f3;
+  color: var(--color-text);
+  font: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.add-recipe-page input:focus,
+.add-recipe-page textarea:focus,
+.add-recipe-page select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(113, 131, 106, 0.13);
+}
+
+.add-recipe-page textarea {
+  min-height: 115px;
+  resize: vertical;
+}
+
+.add-recipe-page .time-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.add-recipe-page .submit-recipe-button {
+  margin-top: 15px;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 9px;
+  background: var(--color-primary);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.add-recipe-page .submit-recipe-button:hover {
+  background: var(--color-text);
+  transform: translateY(-2px);
+}
+
+.error-message {
+  color: #bd4b3b;
+  font-size: 14px;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 850px) {
+  .guest-hero {
+    gap: 35px;
+    padding: 35px;
+  }
+
+  .guest-image img {
+    height: 350px;
+  }
+}
+
+@media (max-width: 700px) {
+  .guest-hero {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+
+  .guest-content {
+    max-width: 100%;
+  }
+
+  .guest-image img {
+    height: 300px;
+  }
+
+  .guest-features {
+    gap: 12px;
+  }
+
+  .guest-feature {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 550px) {
+  .guest-add-page {
+    margin: 25px auto;
+    padding: 12px;
+  }
+
+  .guest-hero {
+    padding: 24px;
+  }
+
+  .add-recipe-page .guest-content h1 {
+    font-size: 37px;
+  }
+
+  .guest-features {
+    grid-template-columns: 1fr;
+    padding: 25px 5px;
+  }
+
+  .add-recipe-page {
+    margin: 25px 12px;
+    padding: 24px 18px;
+  }
+
+  .add-recipe-page .time-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+

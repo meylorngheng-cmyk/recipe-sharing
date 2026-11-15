@@ -1,0 +1,62 @@
+
+/* ==============================
+   TASTEIT - GLOBAL STYLES
+================================ */
+
+/* 1. Color variables */
+:root {
+  /* Main backgrounds */
+  --color-background: #F3EDE3;
+  --color-secondary-bg: #E5DCCB;
+
+  /* Green accents */
+  --color-sage: #A8B49A;
+  --color-primary: #71836A;
+
+  /* Warm accent */
+  --color-terracotta: #CE8965;
+
+  /* Text */
+  --color-text: #373A32;
+
+  /* Surfaces */
+  --color-white: #FFFFFF;
+}
+
+/* 2. Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 3. Main website styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* 4. Images */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 5. Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 6. Buttons */
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+}

@@ -1,0 +1,518 @@
+
+/* =================================
+   MODERN COLLECTIONS PAGE
+================================= */
+
+.collections-page {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: 55px 0 90px;
+  color: var(--color-text);
+}
+
+/* Header */
+
+.collections-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 45px;
+  padding: 38px 42px;
+  background: linear-gradient(120deg, #e8e5d8, #f5e9dc);
+  border-radius: 26px;
+}
+
+.collections-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.collections-header h1 {
+  margin: 0 0 12px;
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 5vw, 46px);
+  font-weight: 550;
+}
+
+.collections-header p {
+  margin: 0;
+  color: #73766d;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Main buttons */
+
+.create-collection-btn {
+  flex-shrink: 0;
+  padding: 14px 23px;
+  border: none;
+  border-radius: 30px;
+  background: var(--color-primary);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.create-collection-btn:hover {
+  background: var(--color-text);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(55, 58, 50, 0.15);
+}
+
+/* Section heading */
+
+.collections-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.collections-section-heading h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.collections-section-heading span {
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: var(--color-secondary-bg);
+  color: var(--color-text);
+  font-size: 13px;
+}
+
+/* Collection cards */
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  gap: 23px;
+}
+
+.collection-card {
+  position: relative;
+  padding: 28px;
+  background: var(--color-white);
+  border: 1px solid rgba(113, 131, 106, 0.12);
+  border-radius: 22px;
+  box-shadow: 0 5px 20px rgba(55, 58, 50, 0.045);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.collection-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(55, 58, 50, 0.10);
+}
+
+.collection-card-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 22px;
+  border-radius: 17px;
+  background: #e8eee4;
+  color: var(--color-primary);
+  font-size: 27px;
+}
+
+.collection-card h3 {
+  margin: 0 0 10px;
+  font-family: Georgia, serif;
+  font-size: 21px;
+}
+
+.collection-card p {
+  min-height: 45px;
+  margin: 0 0 18px;
+  color: #85877f;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.collection-card > span {
+  display: inline-block;
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Collection action buttons */
+
+.view-collection-btn {
+  width: 100%;
+  margin: 22px 0 10px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 25px;
+  background: var(--color-primary);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.view-collection-btn:hover {
+  background: var(--color-text);
+}
+
+.delete-collection-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 7px 15px;
+  border: none;
+  background: transparent;
+  color: #b66f59;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.delete-collection-btn:hover {
+  color: #8e3e2c;
+  text-decoration: underline;
+}
+
+/* Empty state */
+
+.empty-collections {
+  padding: 65px 25px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px dashed #c9cdbf;
+  border-radius: 24px;
+}
+
+.empty-collections-icon {
+  display: grid;
+  place-items: center;
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #e8eee4;
+  color: var(--color-primary);
+  font-size: 32px;
+}
+
+.empty-collections h3 {
+  margin-bottom: 10px;
+  font-family: Georgia, serif;
+  font-size: 23px;
+}
+
+.empty-collections p {
+  margin-bottom: 22px;
+  color: #85877f;
+  line-height: 1.6;
+}
+
+/* Collection form */
+
+.collection-form {
+  margin-bottom: 40px;
+  padding: 30px;
+  background: white;
+  border-radius: 22px;
+  box-shadow: 0 5px 20px rgba(55, 58, 50, 0.06);
+}
+
+.collection-form h2 {
+  margin-top: 0;
+  font-family: Georgia, serif;
+}
+
+.collection-form input,
+.collection-form textarea {
+  width: 100%;
+  margin: 9px 0 20px;
+  padding: 13px 15px;
+  border: 1px solid #deded5;
+  border-radius: 12px;
+  background: #faf9f6;
+  font: inherit;
+  outline: none;
+}
+
+.collection-form input:focus,
+.collection-form textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(113, 131, 106, 0.12);
+}
+
+.collection-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.collection-form-actions button {
+  padding: 11px 20px;
+  border: none;
+  border-radius: 22px;
+  cursor: pointer;
+}
+
+.collection-form-actions button[type="submit"] {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* Saved recipe cards */
+
+.saved-recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.saved-recipe-card {
+  overflow: hidden;
+  background: white;
+  border: 1px solid rgba(113, 131, 106, 0.12);
+  border-radius: 22px;
+  box-shadow: 0 5px 20px rgba(55, 58, 50, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.saved-recipe-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(55, 58, 50, 0.10);
+}
+
+.saved-recipe-link {
+  display: block;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.saved-recipe-link img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.saved-recipe-content {
+  padding: 20px 20px 8px;
+}
+
+.saved-recipe-content span {
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.saved-recipe-content h3 {
+  margin: 10px 0;
+  font-family: Georgia, serif;
+  font-size: 20px;
+}
+
+.saved-recipe-content p {
+  color: #85877f;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.remove-saved-recipe-btn {
+  margin: 8px 20px 20px;
+  padding: 9px 17px;
+  border: 1px solid #85877f;
+  border-radius: 22px;
+  background: transparent;
+  color:black;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.remove-saved-recipe-btn:hover {
+  background: var(--color-background);
+  color: white;
+}
+
+/* Back button */
+
+.back-collections-btn {
+  margin-bottom: 25px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 22px;
+  background: var(--color-secondary-bg);
+  color: var(--color-text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.back-collections-btn:hover {
+  background: var(--color-sage);
+}
+
+
+/* =================================
+   MODERN COLLECTION DETAIL
+================================= */
+
+.collection-detail {
+  animation: collectionFadeIn 0.35s ease;
+}
+
+.collection-detail > .collections-header {
+  min-height: 190px;
+  margin-top: 15px;
+  background:
+    radial-gradient(circle at 90% 15%, rgba(168, 180, 154, 0.35), transparent 35%),
+    linear-gradient(120deg, #e8e5d8, #f5e9dc);
+}
+
+.collection-detail .collections-header h1 {
+  font-size: clamp(34px, 5vw, 48px);
+}
+
+.collection-detail .collections-section-heading {
+  margin-top: 45px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #deded5;
+}
+
+.collection-detail .collections-section-heading span {
+  background: #e8eee4;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Back button */
+
+.collection-detail .back-collections-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 19px;
+  border: 1px solid #deded5;
+  border-radius: 25px;
+  background: white;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.collection-detail .back-collections-btn:hover {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  transform: translateX(-3px);
+}
+
+/* Recipe image */
+
+.saved-recipe-card {
+  position: relative;
+}
+
+.saved-recipe-link img {
+  transition: transform 0.4s ease;
+}
+
+.saved-recipe-card:hover .saved-recipe-link img {
+  transform: scale(1.04);
+}
+
+.saved-recipe-card {
+  overflow: hidden;
+}
+
+/* Remove button */
+
+.remove-saved-recipe-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 105px;
+  font-weight: 600;
+}
+
+/* Empty collection */
+
+.collection-detail .empty-collections {
+  margin-top: 25px;
+}
+
+/* Page animation */
+
+@keyframes collectionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 650px) {
+  .collection-detail > .collections-header {
+    min-height: auto;
+  }
+
+  .collection-detail .collections-section-heading {
+    margin-top: 30px;
+  }
+}
+
+
+/* Mobile responsive */
+
+@media (max-width: 650px) {
+  .collections-page {
+    padding-top: 30px;
+  }
+
+  .collections-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 27px 23px;
+  }
+
+  .create-collection-btn {
+    width: 100%;
+  }
+
+  .collections-section-heading h2 {
+    font-size: 22px;
+  }
+
+  .collections-grid,
+  .saved-recipes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-form {
+    padding: 22px;
+  }
+
+  .collection-form-actions {
+    flex-direction: column;
+  }
+
+  .collection-form-actions button {
+    width: 100%;
+  }
+}

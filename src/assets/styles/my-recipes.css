@@ -1,0 +1,81 @@
+
+.my-recipes-page {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.my-recipes-card {
+  max-width: 480px;
+  width: 100%;
+  padding: 45px 35px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #eee6dc;
+  border-radius: 22px;
+  box-shadow: 0 10px 35px rgba(60, 40, 20, 0.06);
+}
+
+.lock-icon {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #faf1e9;
+  color: #d97745;
+  font-size: 35px;
+}
+
+.my-recipes-card h1 {
+  font-size: 26px;
+  color: #252525;
+  margin-bottom: 12px;
+}
+
+.my-recipes-card > p {
+  color: #777777;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.my-recipes-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 28px 0 22px;
+  flex-wrap: wrap;
+}
+
+.login-action,
+.register-action {
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.login-action {
+  background: #171717;
+  color: #ffffff;
+}
+
+.register-action {
+  background: #d97745;
+  color: #ffffff;
+}
+
+.back-home {
+  color: #d97745;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 500px) {
+  .my-recipes-card {
+    padding: 35px 22px;
+  }
+}
