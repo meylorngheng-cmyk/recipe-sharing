@@ -35,18 +35,23 @@ const matchesSearch =
   })
 
   // Actions
-  async function fetchRecipes() {
-    loading.value = true
-    error.value = null
+      async function fetchRecipes() {
+      loading.value = true
+      error.value = null
 
-    try {
-      recipes.value = await getAllRecipes()
-    } catch {
-      error.value = 'Unable to load recipes. Please try again.'
-    } finally {
-      loading.value = false
+      try {
+        const [data] = await Promise.all([
+          getAllRecipes(),
+          new Promise((resolve) => setTimeout(resolve, 600)),
+        ])
+
+        recipes.value = data
+      } catch {
+        error.value = 'Unable to load recipes. Please try again.'
+      } finally {
+        loading.value = false
+      }
     }
-  }
 
   function addRecipe(recipe: Recipe) {
   recipes.value.unshift(recipe)
