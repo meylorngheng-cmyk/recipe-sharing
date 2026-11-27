@@ -1,6 +1,7 @@
 
 import type { Recipe } from '../models/Recipe'
 import { getRecipeImage } from '../data/images'
+import { getRecipes, getRecipeById as fetchRecipeById } from '../api/recipes'
 
 const API_URL = 'http://localhost:3000/recipes'
 
@@ -14,13 +15,7 @@ function prepareRecipe(recipe: Recipe): Recipe {
 
 // Get all recipes
 export async function getAllRecipes(): Promise<Recipe[]> {
-  const response = await fetch(API_URL)
-
-  if (!response.ok) {
-    throw new Error('Failed to fetch recipes')
-  }
-
-  const recipes: Recipe[] = await response.json()
+  const recipes = await getRecipes()
   return recipes.map(prepareRecipe)
 }
 
@@ -28,18 +23,15 @@ export async function getAllRecipes(): Promise<Recipe[]> {
 export async function getRecipeById(
   id: number
 ): Promise<Recipe | undefined> {
-  const response = await fetch(`${API_URL}/${id}`)
-
-  if (response.status === 404) {
-    return undefined
+  try {
+    const recipe = await fetchRecipeById(id)
+    return prepareRecipe(recipe)
+  } catch (error) {
+    if (error instanceof Error && error.message.includes('404')) {
+      return undefined
+    }
+    throw error
   }
-
-  if (!response.ok) {
-    throw new Error('Failed to fetch recipe')
-  }
-
-  const recipe: Recipe = await response.json()
-  return prepareRecipe(recipe)
 }
 
 // Get recipes by category

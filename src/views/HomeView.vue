@@ -247,27 +247,31 @@ const categories = [
         <a href="#popular-recipes">View All</a>
       </div>
 
-      <div class="recipe-grid">
-        <p v-if="recipeStore.loading">
-          Loading recipes...
-        </p>
+        <div class="recipe-grid">
+      <div v-if="recipeStore.loading" class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>TEST LOADING DISPLAY</p>
+      </div>
 
-        <p v-else-if="recipeStore.error">
-          {{ recipeStore.error }}
-        </p>
+      <div v-else-if="recipeStore.error" class="error-state">
+        <p>{{ recipeStore.error }}</p>
+        <button @click="recipeStore.fetchRecipes()">
+          Try Again
+        </button>
+      </div>
 
-        <p v-else-if="recipeStore.filteredRecipes.length === 0">
-          No recipes found.
-        </p>
+      <p v-else-if="recipeStore.filteredRecipes.length === 0">
+        No recipes found.
+      </p>
 
-       <RecipeCard
+      <RecipeCard
         v-else
         v-for="recipe in recipeStore.filteredRecipes"
         :key="recipe.id"
         :recipe="recipe"
         @save="handleSaveRecipe"
       />
-    </div>
+</div>
 
       <section id="seasonal" class="seasonal-section">
   <div class="section-heading">
